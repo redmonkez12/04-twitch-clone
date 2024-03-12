@@ -5,6 +5,7 @@ import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
                 forcedTheme="dark"
                 storageKey="gamehub-theme"
             >
+                <Toaster theme="light" position="bottom-center"/>
                 {children}
             </ThemeProvider>
             </body>
