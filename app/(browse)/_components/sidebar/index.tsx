@@ -2,7 +2,7 @@ import { Wrapper } from "@/app/(browse)/_components/sidebar/wrapper";
 import { Toggle, ToggleSkeleton } from "@/app/(browse)/_components/sidebar/toggle";
 import { Recommended, RecommendedSkeleton } from "@/app/(browse)/_components/sidebar/recommended";
 import { getRecommended } from "@/lib/recommended-service";
-import { getFollowedUsers } from "@/lib/follower-service";
+import { getFollowedUsers } from "@/lib/follow-service";
 import { Following, FollowingSkeleton } from "@/app/(browse)/_components/sidebar/following";
 
 export async function Sidebar() {
