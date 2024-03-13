@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         }) as WebhookEvent;
     } catch (err) {
         console.error("Error verifying webhook:", err);
-        return new Response("Error occured", {
+        return new Response("Error occurred", {
             status: 400
         });
     }
@@ -56,6 +56,11 @@ export async function POST(req: Request) {
                 externalUserId: payload.data.id,
                 username: payload.data.username,
                 imageUrl: payload.data.image_url,
+                stream: {
+                    create: {
+                        name: `${payload.data.username}'s stream`,
+                    },
+                },
             },
         });
     }
