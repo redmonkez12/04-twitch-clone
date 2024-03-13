@@ -1,11 +1,10 @@
-import { currentUser, UserButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LogOut } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
 
-export async function Actions() {
-    const user = await currentUser();
+import { Button } from "@/components/ui/button";
 
+export function Actions() {
     return (
         <div className="flex items-center justify-end gap-x-2">
             <Button
@@ -19,7 +18,9 @@ export async function Actions() {
                     Exit
                 </Link>
             </Button>
-            <UserButton/>
+            <UserButton
+                afterSignOutUrl="/"
+            />
         </div>
     );
 }
